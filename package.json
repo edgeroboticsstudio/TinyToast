@@ -1,1 +1,15 @@
-
+{
+  "name": "tinytoast",
+  "version": "1.0.0",
+  "description": "A lightweight GitHub CI bot",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "@octokit/app": "^16.0.0",
+    "express": "^5.1.0"
+  }
+}
