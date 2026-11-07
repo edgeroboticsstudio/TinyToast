@@ -37,41 +37,6 @@ TinyToast is currently under development. The initial focus is on webhook integr
 - GitHub Webhooks
 - Render
 
-## Development
-
-Clone the repository:
-
-```bash
-git clone https://github.com/edgeroboticsstudio/TinyToast.git
-cd TinyToast
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Create a `.env` file:
-
-```env
-PORT=10000
-WEBHOOK_SECRET=your_webhook_secret
-APP_ID=your_github_app_id
-PRIVATE_KEY=your_github_app_private_key
-```
-
-Start the application:
-
-```bash
-npm start
-```
-
-## Project Vision
-
-Keep pull request checks simple, useful, and accessible to every developer.
-
----
 
 Developed by [Edge Robotics Studio](https://github.com/edgeroboticsstudio).
 
