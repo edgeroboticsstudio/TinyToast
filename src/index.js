@@ -93,19 +93,22 @@ app.post(
       const octokit =
         await githubApp.getInstallationOctokit(installationId);
 
-      await octokit.rest.checks.create({
-        owner: repository.owner.login,
-        repo: repository.name,
-        name: "TinyToast",
-        head_sha: pullRequest.head.sha,
-        status: "completed",
-        conclusion: "success",
-        output: {
-          title: "TinyToast connected",
-          summary:
-            "TinyToast successfully received this pull request and connected to the GitHub Checks API. Automated code validation will be added next."
-        }
-      });
+await octokit.request(
+  "POST /repos/{owner}/{repo}/check-runs",
+  {
+    owner: repository.owner.login,
+    repo: repository.name,
+    name: "TinyToast",
+    head_sha: pullRequest.head.sha,
+    status: "completed",
+    conclusion: "success",
+    output: {
+      title: "TinyToast connected",
+      summary:
+        "TinyToast successfully received this pull request and connected to the GitHub Checks API. Automated code validation will be added next."
+    }
+  }
+);
 
       console.log("TinyToast check created for PR:", pullRequest.number);
 
